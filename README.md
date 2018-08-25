@@ -1,6 +1,6 @@
 Weather Getter
 =============
-This is a tiny CLI application that gives you the weather in your current city or the city that you specify.
+This is a tiny CLI application that gives you the weather in your current city or the city that you specify. It also demonstrates a basic implementation of Factory Design Pattern.
 
 Setup
 =====
