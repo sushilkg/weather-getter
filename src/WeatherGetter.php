@@ -2,53 +2,34 @@
 
     namespace WeatherGetter;
 
-    use Cmfcmf\OpenWeatherMap;
     use IPStack\PHP\GeoLookup;
 
     class WeatherGetter {
 
-        CONST OWM_UNIT = "metric";
-        CONST OWM_LANG = "en";
-        private $owm_api_key;
-        private $ipstack_api_key;
-
+        private $weather_service;
 
         public function __construct() {
-            $this->owm_api_key = getenv('OWM_API_KEY');
-            $this->ipstack_api_key = getenv('IPSTACK_API_KEY');
-
-            try {
-                $this->owm = new OpenWeatherMap($this->owm_api_key);
-            } catch (\Exception $exception) {
-                echo $exception->getMessage();
-                die;
-            }
+            $weather_service_factory = new WeatherServiceFactory();
+            $this->weather_service = $weather_service_factory->getService("OpenWeatherMap");
         }
 
         public function get($city = false) {
 
             try {
                 if (!$city) {
-                    $city = $this->get_current_city();
+                    $city = $this->getCurrentCity();
                 }
 
-                $response = $this->owm->getWeather($city, self::OWM_UNIT, self::OWM_LANG);
-
-                $result = new \stdClass();
-                $result->city = $city;
-                $result->temperature = $response->temperature->now->getValue() . " " . $response->temperature->now->getUnit();
-                $result->wind_speed = $response->wind->speed->getValue() . " " . $response->wind->speed->getUnit();;
-
-                return $result;
+                return $this->weather_service->getWeather($city);
             } catch (\Exception $exception) {
                 echo $exception->getMessage();
                 die;
             }
         }
 
-        private function get_current_city() {
-            $geoLookup = new GeoLookup($this->ipstack_api_key, false, 10);
-            $my_ip = $this->get_my_ip();
+        private function getCurrentCity() {
+            $geoLookup = new GeoLookup(getenv('IPSTACK_API_KEY'), false, 10);
+            $my_ip = $this->getMyIp();
             try {
                 $location = $geoLookup->getLocationFor($my_ip);
 
@@ -59,7 +40,7 @@
             }
         }
 
-        private function get_my_ip() {
+        private function getMyIp() {
             try {
                 $ch = curl_init("http://icanhazip.com/");
                 curl_setopt($ch, CURLOPT_HEADER, FALSE);
