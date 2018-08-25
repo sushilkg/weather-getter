@@ -16,7 +16,7 @@ Usage
 - You can run `./wg weather:current` to get the current weather in your city.
 - You can also specify which city to get the weather for: `./wg weather:current Kathmandu`
 
-To access this project from anywhere, add the project root `wg` to the `$PATH` variable.
+To access this project from anywhere, add the project root folder to the `$PATH` variable.
 
 Licence
 =======
