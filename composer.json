@@ -1,0 +1,12 @@
+{
+    "name": "sushilgupta/weather-getter",
+    "authors": [
+        {
+            "name": "Sushil Gupta",
+            "email": "desushil@gmail.com"
+        }
+    ],
+    "require": {
+        "symfony/console": "^3.4"
+    }
+}
