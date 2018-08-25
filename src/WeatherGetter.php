@@ -18,9 +18,9 @@
             $this->ipstack_api_key = getenv('IPSTACK_API_KEY');
 
             try {
-                $this->owm = new OpenWeatherMap(self::OWM_API_KEY);
+                $this->owm = new OpenWeatherMap($this->owm_api_key);
             } catch (\Exception $exception) {
-                echo "Error: " . $exception->getMessage();
+                echo $exception->getMessage();
                 die;
             }
         }
@@ -41,20 +41,20 @@
 
                 return $result;
             } catch (\Exception $exception) {
-                echo "Error: " . $exception->getMessage();
+                echo $exception->getMessage();
                 die;
             }
         }
 
         private function get_current_city() {
-            $geoLookup = new GeoLookup(self::IPSTACK_API_KEY, false, 10);
+            $geoLookup = new GeoLookup($this->ipstack_api_key, false, 10);
             $my_ip = $this->get_my_ip();
             try {
                 $location = $geoLookup->getLocationFor($my_ip);
 
                 return $location->city;
             } catch (\Exception $exception) {
-                echo "Error: " . $exception->getMessage();
+                echo $exception->getMessage();
                 die;
             }
         }
