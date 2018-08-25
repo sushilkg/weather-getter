@@ -8,7 +8,8 @@
     ],
     "require": {
         "symfony/console": "^4.1",
-        "cmfcmf/openweathermap-php-api": "^2.3"
+        "cmfcmf/openweathermap-php-api": "^2.3",
+        "nafisc/ipstackgeo-php": "^1.4"
     },
     "autoload": {
         "psr-4": {
