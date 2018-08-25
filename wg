@@ -3,7 +3,11 @@
     require_once __DIR__ . '/vendor/autoload.php';
 
     use Symfony\Component\Console\Application;
+    use Dotenv\Dotenv;
     use WeatherGetter\WeatherGetterCommand;
+
+    $dotenv = new Dotenv(__DIR__);
+    $dotenv->load();
 
     $app = new Application('Weather Getter', '1.0');
     $app->add(new WeatherGetterCommand());
