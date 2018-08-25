@@ -29,7 +29,7 @@
 
                 $result = new \stdClass();
                 $result->city = $city;
-                $result->temperature = $response->temperature->now->getValue() . " " . $response->temperature->now->getUnit();
+                $result->temperature = $response->temperature->now->getValue() . " " . html_entity_decode($response->temperature->now->getUnit());
                 $result->wind_speed = $response->wind->speed->getValue() . " " . $response->wind->speed->getUnit();;
 
                 return $result;

@@ -22,12 +22,16 @@
         }
 
         private function getCurrentCity() {
-            $geoLookup = new GeoLookup(getenv('IPSTACK_API_KEY'), false, 10);
+            $geo_lookup = new GeoLookup(getenv('IPSTACK_API_KEY'), false, 10);
             $my_ip = $this->getMyIp();
             try {
-                $location = $geoLookup->getLocationFor($my_ip);
+                $location = $geo_lookup->getLocationFor($my_ip);
 
-                return $location->city;
+                if (!empty($location->city)) {
+                    return $location->city;
+                }
+
+                return $location->location->capital;
             } catch (\Exception $exception) {
                 echo $exception->getMessage();
                 die;
