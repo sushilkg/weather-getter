@@ -7,7 +7,7 @@ Setup
 - Git clone this repo
 - Run `composer install` inside the project root
 - Make the `wg` file executable by `sudo chmod +x wg`
-- Copy `.env_sample` file and create a new file named `.env` 
+- Copy `.env.example` file and create a new file named `.env` 
 - Grab APIs from `https://openweathermap.org/`
  and `https://ipstack.com/` put them on `.env` file. 
 
