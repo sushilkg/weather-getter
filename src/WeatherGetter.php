@@ -73,7 +73,7 @@
 
                 return trim($result);
             } catch (\Exception $exception) {
-                echo "Error: " . $exception->getMessage();
+                echo $exception->getMessage();
                 die;
             }
         }
