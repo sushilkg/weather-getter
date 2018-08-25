@@ -14,17 +14,11 @@
         }
 
         public function get($city = false) {
-
-            try {
-                if (!$city) {
-                    $city = $this->getCurrentCity();
-                }
-
-                return $this->weather_service->getWeather($city);
-            } catch (\Exception $exception) {
-                echo $exception->getMessage();
-                die;
+            if (!$city) {
+                $city = $this->getCurrentCity();
             }
+
+            return $this->weather_service->getWeather($city);
         }
 
         private function getCurrentCity() {
