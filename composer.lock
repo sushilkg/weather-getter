@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ac11b70e43746885b467253fb71a21d2",
+    "content-hash": "ee4df90e141c32a000d264c9ba91cd09",
     "packages": [
         {
             "name": "cmfcmf/openweathermap-php-api",
@@ -102,6 +102,57 @@
                 "psr-3"
             ],
             "time": "2016-10-10T12:19:37+00:00"
+        },
+        {
+            "name": "sudiptpa/geoip",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sudiptpa/geoip.git",
+                "reference": "470407911544921085a2af351335721d88ba6943"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sudiptpa/geoip/zipball/470407911544921085a2af351335721d88ba6943",
+                "reference": "470407911544921085a2af351335721d88ba6943",
+                "shasum": ""
+            },
+            "require": {
+                "php": "~7.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "~2.0",
+                "mockery/mockery": "^0.9.4",
+                "phpunit/phpunit": "~6.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Sujip\\GeoIp\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sujip Thapa",
+                    "email": "sudiptpa@gmail.com"
+                }
+            ],
+            "description": "A simple IP to Geo Location implementation library.",
+            "keywords": [
+                "geoip",
+                "ip to location"
+            ],
+            "abandoned": "https://github.com/sudiptpa/ipstack",
+            "time": "2017-12-25T08:33:53+00:00"
         },
         {
             "name": "symfony/console",

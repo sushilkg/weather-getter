@@ -24,14 +24,14 @@
             $weatherGetter = new WeatherGetter();
             $city = $input->getArgument('city');
 
-            $result = $weatherGetter->get($city);
-
-            if ($result) {
+            try {
+                $result = $weatherGetter->get($city);
                 $output->writeln('Weather of ' . $result->city);
                 $output->writeln('Temperature: ' . $result->temperature);
                 $output->writeln('Wind speed: ' . $result->wind_speed);
-            } else {
+            } catch (\Exception $e) {
                 $output->writeln('Couldn\'t get the weather. Pleas make sure the city name is correct or try again.');
+                $output->write('Error: '. $e->getMessage());
             }
         }
 
