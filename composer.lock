@@ -4,8 +4,58 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4a1fb6cded6c3e0b29d303fb86bd4623",
+    "content-hash": "ac11b70e43746885b467253fb71a21d2",
     "packages": [
+        {
+            "name": "cmfcmf/openweathermap-php-api",
+            "version": "v2.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cmfcmf/OpenWeatherMap-PHP-Api.git",
+                "reference": "a15fd886dcdba9341a5025dd2c7bb5604c7be163"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cmfcmf/OpenWeatherMap-PHP-Api/zipball/a15fd886dcdba9341a5025dd2c7bb5604c7be163",
+                "reference": "a15fd886dcdba9341a5025dd2c7bb5604c7be163",
+                "shasum": ""
+            },
+            "require": {
+                "ext-xml": "*",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8 || ^5.0.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Cmfcmf\\": "Cmfcmf"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christian Flach (cmfcmf)",
+                    "email": "cmfcmf.flach@gmail.com",
+                    "homepage": "http://cmfcmf.github.io",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A php api to parse weather data from OpenWeatherMap.org. This api tries to normalise and abstract the data and remove inconsistencies.",
+            "homepage": "https://github.com/cmfcmf/OpenWeatherMap-PHP-Api",
+            "keywords": [
+                "OpenWeatherMap",
+                "api",
+                "free",
+                "owm",
+                "weather"
+            ],
+            "time": "2018-04-16T18:14:21+00:00"
+        },
         {
             "name": "psr/log",
             "version": "1.0.2",
