@@ -2,14 +2,19 @@ Weather Getter
 =============
 This is a tiny CLI application that gives you the weather in your current city or the city that you specify. It also demonstrates a basic implementation of Factory Design Pattern.
 
+Requirements
+============
+- PHP 7.2
+- Composer
+- OpenWeatherMap.org & IPStack.com API keys
+
 Setup
 =====
 - Git clone this repo
 - Run `composer install` inside the project root
 - Make the `wg` file executable by `sudo chmod +x wg`
 - Copy `.env.example` file and create a new file named `.env` 
-- Grab APIs from `https://openweathermap.org/`
- and `https://ipstack.com/` put them on `.env` file. 
+- Put the API keys on `.env` file. 
 
 Usage
 =====
