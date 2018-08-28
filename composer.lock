@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a923e28d120b69732f9815de572cb4ec",
+    "content-hash": "51eb5cb4a3d78d914de74aead2a56a4c",
     "packages": [
         {
             "name": "cmfcmf/openweathermap-php-api",

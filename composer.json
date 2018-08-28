@@ -10,7 +10,8 @@
         "symfony/console": "^4.1",
         "cmfcmf/openweathermap-php-api": "^2.3",
         "nafisc/ipstackgeo-php": "^1.4",
-        "vlucas/phpdotenv": "^2.5"
+        "vlucas/phpdotenv": "^2.5",
+        "guzzlehttp/guzzle": "^6.3"
     },
     "autoload": {
         "psr-4": {

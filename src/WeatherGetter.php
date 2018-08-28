@@ -3,6 +3,7 @@
     namespace WeatherGetter;
 
     use IPStack\PHP\GeoLookup;
+    use GuzzleHttp\Client;
 
     class WeatherGetter {
 
@@ -40,17 +41,16 @@
 
         private function getMyIp() {
             try {
-                $ch = curl_init("http://icanhazip.com/");
-                curl_setopt($ch, CURLOPT_HEADER, FALSE);
-                curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
-                $result = curl_exec($ch);
-                curl_close($ch);
+                $client = new Client();
+                $response = $client->request('GET', 'http://icanhazip.com/');
 
-                if ($result === FALSE) {
+                $my_ip = trim($response->getBody()->getContents());
+
+                if (!filter_var($my_ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4)) {
                     throw new \Exception("IP couldn't be detected");
                 }
 
-                return trim($result);
+                return $my_ip;
             } catch (\Exception $exception) {
                 echo $exception->getMessage();
                 die;
