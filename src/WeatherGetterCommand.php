@@ -17,17 +17,16 @@
 
         protected function execute(InputInterface $input, OutputInterface $output) {
 
-            $weatherGetter = new WeatherGetter();
-            $city = $input->getArgument('city');
+            try {
+                $weatherGetter = new WeatherGetter();
+                $city = $input->getArgument('city');
+                $result = $weatherGetter->get($city);
 
-            $result = $weatherGetter->get($city);
-
-            if ($result) {
                 $output->writeln('Weather of ' . $result->city);
                 $output->writeln('Temperature: ' . $result->temperature);
                 $output->writeln('Wind speed: ' . $result->wind_speed);
-            } else {
-                $output->writeln('Couldn\'t get the weather. Pleas make sure the city name is correct or try again.');
+            } catch (\Exception $exception) {
+                $output->writeln($exception->getMessage());
             }
         }
 
