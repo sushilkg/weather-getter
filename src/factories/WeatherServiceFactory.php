@@ -1,6 +1,8 @@
 <?php
 
-    namespace WeatherGetter;
+    namespace WeatherGetter\Factories;
+
+    use WeatherGetter\Services\OWMService;
 
     class WeatherServiceFactory {
 

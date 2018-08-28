@@ -1,6 +1,6 @@
 <?php
 
-    namespace WeatherGetter;
+    namespace WeatherGetter\Interfaces;
 
     interface WeatherServiceInterface {
 

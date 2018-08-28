@@ -1,8 +1,9 @@
 <?php
 
-    namespace WeatherGetter;
+    namespace WeatherGetter\Services;
 
     use Cmfcmf\OpenWeatherMap;
+    use WeatherGetter\Interfaces\WeatherServiceInterface;
 
     class OWMService implements WeatherServiceInterface {
 

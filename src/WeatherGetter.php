@@ -4,6 +4,7 @@
 
     use IPStack\PHP\GeoLookup;
     use GuzzleHttp\Client;
+    use WeatherGetter\Factories\WeatherServiceFactory;
 
     class WeatherGetter {
 
